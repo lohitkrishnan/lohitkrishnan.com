@@ -3,70 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lohit Krishnan</title>
+    <title>Welcome</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
     <style>
-        /* The Anthropic "Academic Minimalist" Theme */
-        :root {
-            --bg-color: #F0EFEA;      /* Warm Paper */
-            --text-color: #141413;    /* Charcoal */
-            --accent-color: #D04D2F;  /* Subtle Rust/Orange for links */
-        }
+        /* 1. Basic Setup */
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Georgia', 'Times New Roman', serif; /* Fallback to system serifs */
-            line-height: 1.6;
+            background-color: #0d1117; /* GitHub Dark Mode color */
+            color: #c9d1d9;
+            height: 100vh; /* Full screen height */
             margin: 0;
-            padding: 0;
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            font-family: "Courier New", Courier, monospace;
         }
-        .container {
-            max-width: 680px; /* The "Reading Column" width */
-            padding: 80px 20px;
-            width: 100%;
+
+        /* 2. The Typewriter Container */
+        .typewriter h1 {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The orange cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; 
+            letter-spacing: .15em;
+            font-size: 2rem;
+            
+            /* The Animation Settings */
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
         }
-        h1 {
-            font-family: 'Helvetica Neue', 'Inter', sans-serif; /* Clean header contrast */
-            font-weight: 500;
-            font-size: 2.2rem;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
+
+        /* 3. The Animations */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
         }
-        p {
-            font-size: 1.15rem;
-            margin-bottom: 1.5rem;
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
         }
-        .meta {
-            font-family: 'Helvetica Neue', sans-serif;
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        hr {
-            border: 0;
-            border-top: 1px solid #ccc; /* Thin divider */
-            margin: 3rem 0;
+        
+        /* Mobile adjustment: If screen is small, make font smaller so it fits */
+        @media (max-width: 600px) {
+            .typewriter h1 {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="meta">Lohit Krishnan / Engineering</div>
-        
-        <h1>Hello, World.</h1>
-        
-        <p>This is a test of the emergency broadcast system.</p>
-        
-        <p>If you are reading this, the DNS propagation was successful. 
-        This page is styled to replicate the "Academic Minimalist" aesthetic: 
-        high-contrast serif typography on a warm, off-white background.</p>
-        
-        <hr>
-        
-        <p><em>Next steps: Install Hugo and begin writing.</em></p>
+
+    <div class="typewriter">
+        <h1>Hello, World. I am online.</h1>
     </div>
+
 </body>
 </html>
