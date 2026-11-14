@@ -8,20 +8,39 @@
     <meta property="og:title" content="You’re paid in surprise, not pleasure">
     <meta property="og:description" content="Dopamine is an error signal, not a pleasure signal. What that means for wanting, habits, addiction and wellbeing.">
     <meta property="og:type" content="article">
+    <meta name="color-scheme" content="light dark">
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
+    <link rel="preload" href="/fonts/Lora-Variable.woff" as="font" type="font/woff" crossorigin>
+
     <style>
-        /* Same palette and typewriter voice as the landing page. */
+        /* Lora, a serif drawn for reading on screens, served from this site so it looks the same on every device. */
+        @font-face {
+            font-family: "Lora";
+            src: url("/fonts/Lora-Variable.woff") format("woff");
+            font-weight: 400 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Warm paper in light mode, warm charcoal in dark mode; follows the device setting. */
         :root {
-            --bg: #0d1117;
-            --text: #c9d1d9;
-            --bright: #f0f6fc;
-            --muted: #8b949e;
-            --rule: #21262d;
+            --bg: #faf8f3;
+            --text: #24221f;
+            --muted: #6f6a62;
+            --rule: #e4dfd5;
             --accent: orange;
-            --mono: "Courier New", Courier, monospace;
-            --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+            --serif: "Lora", "Iowan Old Style", Charter, Georgia, "Noto Serif", serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1f1e1c;
+                --text: #e9e5dd;
+                --muted: #9c978e;
+                --rule: #36332f;
+            }
         }
 
         * { box-sizing: border-box; }
@@ -34,17 +53,17 @@
             color: var(--text);
             font-family: var(--serif);
             font-size: 1.125rem;
-            line-height: 1.7;
+            line-height: 1.65;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
-
-        ::selection { background: var(--accent); color: var(--bg); }
 
         a {
             color: inherit;
             text-decoration-color: var(--accent);
+            text-decoration-thickness: 1.5px;
             text-underline-offset: 0.2em;
         }
-        a:hover { color: var(--bright); }
         a:focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 3px;
@@ -57,73 +76,47 @@
         }
 
         .home {
-            font-family: var(--mono);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--muted);
         }
 
-        header { margin: 4rem 0 3rem; }
+        header { margin: 3.5rem 0 2.5rem; }
 
         h1 {
             margin: 0;
-            font-family: var(--mono);
-            font-weight: 700;
-            font-size: clamp(1.6rem, 6.5vw, 2.4rem);
-            line-height: 1.25;
-            color: var(--bright);
-        }
-
-        /* Keeps the cursor attached to the last word when the title wraps. */
-        .last { white-space: nowrap; }
-
-        /* The orange cursor from the landing page, parked after the last word. */
-        .caret {
-            display: inline-block;
-            width: 0.15em;
-            height: 1em;
-            margin-left: 0.15em;
-            vertical-align: -0.12em;
-            background: var(--accent);
-            animation: blink-caret .75s step-end infinite;
-        }
-
-        @keyframes blink-caret {
-            from, to { opacity: 0; }
-            50% { opacity: 1; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .caret { animation: none; }
+            font-weight: 600;
+            font-size: clamp(1.9rem, 7vw, 2.6rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            text-wrap: balance;
         }
 
         time {
             display: block;
-            margin-top: 1.25rem;
-            font-family: var(--mono);
-            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
             color: var(--muted);
         }
 
-        p { margin: 0 0 1.4em; }
+        p { margin: 0 0 1.35em; }
 
-        strong { color: var(--bright); }
+        strong { font-weight: 700; }
 
         ul {
-            margin: 0 0 1.4em;
+            margin: 0 0 1.35em;
             padding-left: 1.2em;
         }
-        li { margin-bottom: 0.6em; }
-        li::marker { color: var(--accent); }
+        li { margin-bottom: 0.55em; }
 
         footer {
-            margin-top: 4rem;
+            margin-top: 3.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid var(--rule);
         }
 
         @media (max-width: 600px) {
             body { font-size: 1.0625rem; }
-            header { margin: 2.5rem 0 2.25rem; }
+            header { margin: 2.25rem 0 2rem; }
         }
     </style>
 </head>
@@ -134,7 +127,7 @@
 
         <article>
             <header>
-                <h1>You’re paid in surprise, not <span class="last">pleasure<span class="caret" aria-hidden="true"></span></span></h1>
+                <h1>You’re paid in surprise, not pleasure</h1>
                 <time datetime="2026-11-14">14 November 2026</time>
             </header>
 
