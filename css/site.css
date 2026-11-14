@@ -1,0 +1,161 @@
+/* Shared look for lohitkrishnan.com: Lora on warm paper, warm charcoal in dark mode. */
+
+/* Lora is served from this site so pages look the same on every device. */
+@font-face {
+    font-family: "Lora";
+    src: url("/fonts/Lora-Variable.woff") format("woff");
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --bg: #faf8f3;
+    --text: #24221f;
+    --muted: #6f6a62;
+    --rule: #e4dfd5;
+    --accent: orange;
+    --serif: "Lora", "Iowan Old Style", Charter, Georgia, "Noto Serif", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1f1e1c;
+        --text: #e9e5dd;
+        --muted: #9c978e;
+        --rule: #36332f;
+    }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.page {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+}
+
+/* Small link back to the homepage, used at the top and bottom of an essay. */
+.home-link {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.date {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+/* ---------- Homepage ---------- */
+
+.intro { margin: 3.5rem 0 3.5rem; }
+
+.intro-name {
+    margin: 0;
+    font-weight: 600;
+    font-size: clamp(2.3rem, 10vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+}
+
+.intro-about {
+    margin: 0.9rem 0 0;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.intro-links {
+    margin: 1.1rem 0 0;
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.section-title {
+    margin: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.posts {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.post {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.2rem 1.5rem;
+    padding: 0.55rem 0;
+}
+
+.post-title {
+    flex: 1 1 16rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ---------- Essay ---------- */
+
+.essay-header { margin: 3.5rem 0 2.5rem; }
+
+.essay-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+.essay-header .date {
+    display: block;
+    margin-top: 1rem;
+}
+
+.essay p { margin: 0 0 1.35em; }
+
+.essay strong { font-weight: 700; }
+
+.essay-footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 600px) {
+    body { font-size: 1.0625rem; }
+    .intro { margin: 2.25rem 0 2.75rem; }
+    .essay-header { margin: 2.25rem 0 2rem; }
+}

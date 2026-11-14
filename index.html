@@ -3,90 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    
+    <title>Lohit Krishnan</title>
+    <meta name="description" content="Lohit Krishnan, software engineer in Bangalore.">
+    <meta property="og:title" content="Lohit Krishnan">
+    <meta property="og:description" content="Software engineer in Bangalore.">
+    <meta property="og:type" content="website">
+    <meta name="color-scheme" content="light dark">
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
-    <style>
-        /* 1. Basic Setup */
-        body {
-            background-color: #0d1117; /* GitHub Dark Mode color */
-            color: #c9d1d9;
-            height: 100vh; /* Full screen height */
-            margin: 0;
-            display: flex;
-            flex-direction: column; /* Stack the headline and the essay link */
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
-            font-family: "Courier New", Courier, monospace;
-        }
-
-        /* Link to the essay, below the typewriter line */
-        .reading {
-            margin: 2.5rem 1.25rem 0;
-            text-align: center;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .reading a {
-            color: inherit;
-            text-decoration-color: orange;
-            text-underline-offset: 0.25em;
-        }
-
-        .reading a:hover {
-            color: #f0f6fc;
-        }
-
-        .reading a:focus-visible {
-            outline: 2px solid orange;
-            outline-offset: 4px;
-        }
-
-        /* 2. The Typewriter Container */
-        .typewriter h1 {
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid orange; /* The orange cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; 
-            letter-spacing: .15em;
-            font-size: 2rem;
-            
-            /* The Animation Settings */
-            animation: 
-                typing 3.5s steps(40, end),
-                blink-caret .75s step-end infinite;
-        }
-
-        /* 3. The Animations */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange; }
-        }
-        
-        /* Mobile adjustment: If screen is small, make font smaller so it fits */
-        @media (max-width: 600px) {
-            .typewriter h1 {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="preload" href="/fonts/Lora-Variable.woff" as="font" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
 
-    <div class="typewriter">
-        <h1>Page under construction.</h1>
-    </div>
+    <div class="page">
+        <header class="intro">
+            <h1 class="intro-name">Lohit Krishnan</h1>
+            <p class="intro-about">Software engineer in Bangalore.</p>
+            <p class="intro-links"><a href="https://github.com/lohitkrishnan">GitHub</a></p>
+        </header>
 
-    <p class="reading">
-        <a href="/essays/paid-in-surprise/">You’re paid in surprise, not pleasure</a>
-    </p>
+        <main>
+            <h2 class="section-title">Writing</h2>
+            <ul class="posts">
+                <li class="post">
+                    <a class="post-title" href="/essays/paid-in-surprise/">You’re paid in surprise, not pleasure</a>
+                    <time class="date" datetime="2026-11-14">14 November 2026</time>
+                </li>
+            </ul>
+        </main>
+    </div>
 
 </body>
 </html>

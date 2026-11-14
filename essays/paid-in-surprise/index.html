@@ -13,151 +13,36 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
     <link rel="preload" href="/fonts/Lora-Variable.woff" as="font" type="font/woff" crossorigin>
-
-    <style>
-        /* Lora, a serif drawn for reading on screens, served from this site so it looks the same on every device. */
-        @font-face {
-            font-family: "Lora";
-            src: url("/fonts/Lora-Variable.woff") format("woff");
-            font-weight: 400 700;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* Warm paper in light mode, warm charcoal in dark mode; follows the device setting. */
-        :root {
-            --bg: #faf8f3;
-            --text: #24221f;
-            --muted: #6f6a62;
-            --rule: #e4dfd5;
-            --accent: orange;
-            --serif: "Lora", "Iowan Old Style", Charter, Georgia, "Noto Serif", serif;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #1f1e1c;
-                --text: #e9e5dd;
-                --muted: #9c978e;
-                --rule: #36332f;
-            }
-        }
-
-        * { box-sizing: border-box; }
-
-        html { -webkit-text-size-adjust: 100%; }
-
-        body {
-            margin: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: var(--serif);
-            font-size: 1.125rem;
-            line-height: 1.65;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: inherit;
-            text-decoration-color: var(--accent);
-            text-decoration-thickness: 1.5px;
-            text-underline-offset: 0.2em;
-        }
-        a:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 3px;
-        }
-
-        .page {
-            max-width: 36rem;
-            margin: 0 auto;
-            padding: 2.5rem 1.25rem 4rem;
-        }
-
-        .home {
-            font-size: 0.95rem;
-            color: var(--muted);
-        }
-
-        header { margin: 3.5rem 0 2.5rem; }
-
-        h1 {
-            margin: 0;
-            font-weight: 600;
-            font-size: clamp(1.9rem, 7vw, 2.6rem);
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-            text-wrap: balance;
-        }
-
-        time {
-            display: block;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-            color: var(--muted);
-        }
-
-        p { margin: 0 0 1.35em; }
-
-        strong { font-weight: 700; }
-
-        ul {
-            margin: 0 0 1.35em;
-            padding-left: 1.2em;
-        }
-        li { margin-bottom: 0.55em; }
-
-        footer {
-            margin-top: 3.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--rule);
-        }
-
-        @media (max-width: 600px) {
-            body { font-size: 1.0625rem; }
-            header { margin: 2.25rem 0 2rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
 
     <div class="page">
-        <a class="home" href="/">lohitkrishnan.com</a>
+        <a class="home-link" href="/">Lohit Krishnan</a>
 
-        <article>
-            <header>
-                <h1>You’re paid in surprise, not pleasure</h1>
-                <time datetime="2026-11-14">14 November 2026</time>
+        <article class="essay">
+            <header class="essay-header">
+                <h1 class="essay-title">You’re paid in surprise, not pleasure</h1>
+                <time class="date" datetime="2026-11-14">14 November 2026</time>
             </header>
 
             <p>In the 1990s, Wolfram Schultz recorded dopamine neurons in monkeys as they received juice. At first the neurons fired when the juice arrived. Once a light reliably predicted the juice, they fired at the light and stayed silent for the juice itself. When the light came and no juice followed, firing dropped below baseline.</p>
 
-            <p>That is not a pleasure signal. It is an error signal: what you got minus what you expected. It matches, almost term for term, the temporal-difference error that computer scientists had devised separately to train learning machines. Dopamine has other jobs too, in movement and effort, but this one explains the most about daily life.</p>
+            <p>That is not a pleasure signal. It is an error signal: what you got minus what you expected. It matches, almost term for term, the temporal-difference error that computer scientists had devised separately to train learning machines.</p>
 
-            <p><strong>Wanting is not liking.</strong> Rats stripped of dopamine still show pleasure when sugar touches their tongue, but they won’t cross the cage to get it and will starve beside food. Dopamine builds the pull, not the pleasure. Because the two run on different circuitry, they can come apart, leaving you craving something intensely while barely enjoying it.</p>
+            <p><strong>Wanting is not liking.</strong> Rats stripped of dopamine still show pleasure when sugar touches their tongue, but they won’t cross the cage to get it and will starve beside food. Dopamine builds the pull, not the pleasure. Because the two run on different circuitry, they can come apart, leaving you craving something intensely while barely enjoying it. That gap is the signature of addiction, and a fair description of stress eating, where the craving is loud and the food barely registers.</p>
 
-            <p><strong>Addiction hacks the error term.</strong> Natural rewards get predicted away: the tenth bite teaches nothing, so the signal fades. In one influential model, drugs like cocaine raise dopamine chemically, whatever you expected. The brain reads “better than predicted” every time, so the value of the drug, and of every cue pointing to it, keeps climbing. Slot machines and feeds run a milder version, because a reward you can’t predict is one you never finish learning about.</p>
+            <p><strong>Addiction hacks the error term.</strong> Natural rewards get predicted away: the tenth bite teaches nothing, so the signal fades. In one influential model, drugs like cocaine raise dopamine chemically, whatever you expected. The brain reads “better than predicted” every time, so the value of the drug, and of every cue pointing to it, keeps climbing. Gambling runs a milder version with no chemical at all, because a reward you can’t predict is one you never finish learning about.</p>
 
-            <p><strong>Habits outlive their reasons.</strong> With repetition, control shifts from circuits that ask “is this worth it?” to circuits that simply run cue, then action. This is why you open the app without wanting to.</p>
+            <p><strong>Habits outlive their reasons.</strong> With repetition, control shifts from circuits that ask “is this worth it?” to circuits that simply run cue, then action. This is why your hand is on the phone the moment it buzzes, before you have decided anything, and why redesigning the cue beats fighting the urge.</p>
 
-            <p><strong>Nothing stays good.</strong> When researchers tracked mood moment to moment during a gambling task, happiness followed not how much people had won but whether they had just done better than expected. The system normalises whatever you have and reports only the change. It was built to keep you moving, not to make you content.</p>
+            <p>The same logic applies to wellbeing. When researchers tracked mood moment to moment during a gambling task, happiness followed not how much people had won but whether they had just done better than expected. No level of anything stays good. The system normalises whatever you have and reports only the change, because it was built to keep you moving, not to make you content.</p>
 
-            <p><strong>So learn to tell the pull from the pleasure.</strong> Pull lives in the anticipation and pleasure lives in the experience, and they leave different fingerprints. Pull is urgent, set off by a cue, and has no stopping point. Pleasure can wait, and it reaches “enough”. Pull peaks before you start and leaves you flat. Pleasure shows up in the middle and leaves you satisfied. The simplest test is delay: wait ten minutes or remove the cue. Pull usually evaporates, while a real preference is still there.</p>
-
-            <p><strong>Then put pleasure first.</strong> For a week or two, rate how much you want something before you do it, give it your full attention, stop at enough, and rate how good it was ten minutes after. Then compare the two numbers.</p>
-
-            <ul>
-                <li><strong>High want, low pleasure:</strong> add friction. Log out, move the app, or keep it out of the house.</li>
-                <li><strong>Low want, high pleasure:</strong> put it on the calendar, because nothing will remind you.</li>
-                <li><strong>High want, high pleasure:</strong> keep it, and space it out so it stays good.</li>
-            </ul>
-
-            <p>Pull is not the enemy. Wanting aimed at things you end up liking is what motivation is, so the goal is to line the two up, not to kill desire. Just remember that the itch is not evidence that scratching will feel good.</p>
+            <p>So the lever isn’t more reward. Pick pursuits where progress keeps surprising you, such as skills, craft, and people. Leave some expectations low enough to be beaten. And learn to tell the pull from the pleasure: the itch is not evidence that scratching will feel good.</p>
         </article>
 
-        <footer>
-            <a class="home" href="/">lohitkrishnan.com</a>
+        <footer class="essay-footer">
+            <a class="home-link" href="/">Lohit Krishnan</a>
         </footer>
     </div>
 
