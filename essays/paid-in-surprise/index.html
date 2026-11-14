@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You’re paid in surprise, not pleasure</title>
+    <meta name="description" content="Dopamine is an error signal, not a pleasure signal. What that means for wanting, habits, addiction and wellbeing.">
+    <meta property="og:title" content="You’re paid in surprise, not pleasure">
+    <meta property="og:description" content="Dopamine is an error signal, not a pleasure signal. What that means for wanting, habits, addiction and wellbeing.">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
+    <style>
+        /* Same palette and typewriter voice as the landing page. */
+        :root {
+            --bg: #0d1117;
+            --text: #c9d1d9;
+            --bright: #f0f6fc;
+            --muted: #8b949e;
+            --rule: #21262d;
+            --accent: orange;
+            --mono: "Courier New", Courier, monospace;
+            --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { -webkit-text-size-adjust: 100%; }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--serif);
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        ::selection { background: var(--accent); color: var(--bg); }
+
+        a {
+            color: inherit;
+            text-decoration-color: var(--accent);
+            text-underline-offset: 0.2em;
+        }
+        a:hover { color: var(--bright); }
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .page {
+            max-width: 36rem;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 4rem;
+        }
+
+        .home {
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        header { margin: 4rem 0 3rem; }
+
+        h1 {
+            margin: 0;
+            font-family: var(--mono);
+            font-weight: 700;
+            font-size: clamp(1.6rem, 6.5vw, 2.4rem);
+            line-height: 1.25;
+            color: var(--bright);
+        }
+
+        /* Keeps the cursor attached to the last word when the title wraps. */
+        .last { white-space: nowrap; }
+
+        /* The orange cursor from the landing page, parked after the last word. */
+        .caret {
+            display: inline-block;
+            width: 0.15em;
+            height: 1em;
+            margin-left: 0.15em;
+            vertical-align: -0.12em;
+            background: var(--accent);
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .caret { animation: none; }
+        }
+
+        time {
+            display: block;
+            margin-top: 1.25rem;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        p { margin: 0 0 1.4em; }
+
+        strong { color: var(--bright); }
+
+        ul {
+            margin: 0 0 1.4em;
+            padding-left: 1.2em;
+        }
+        li { margin-bottom: 0.6em; }
+        li::marker { color: var(--accent); }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--rule);
+        }
+
+        @media (max-width: 600px) {
+            body { font-size: 1.0625rem; }
+            header { margin: 2.5rem 0 2.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <a class="home" href="/">lohitkrishnan.com</a>
+
+        <article>
+            <header>
+                <h1>You’re paid in surprise, not <span class="last">pleasure<span class="caret" aria-hidden="true"></span></span></h1>
+                <time datetime="2026-11-14">14 November 2026</time>
+            </header>
+
+            <p>In the 1990s, Wolfram Schultz recorded dopamine neurons in monkeys as they received juice. At first the neurons fired when the juice arrived. Once a light reliably predicted the juice, they fired at the light and stayed silent for the juice itself. When the light came and no juice followed, firing dropped below baseline.</p>
+
+            <p>That is not a pleasure signal. It is an error signal: what you got minus what you expected. It matches, almost term for term, the temporal-difference error that computer scientists had devised separately to train learning machines. Dopamine has other jobs too, in movement and effort, but this one explains the most about daily life.</p>
+
+            <p><strong>Wanting is not liking.</strong> Rats stripped of dopamine still show pleasure when sugar touches their tongue, but they won’t cross the cage to get it and will starve beside food. Dopamine builds the pull, not the pleasure. Because the two run on different circuitry, they can come apart, leaving you craving something intensely while barely enjoying it.</p>
+
+            <p><strong>Addiction hacks the error term.</strong> Natural rewards get predicted away: the tenth bite teaches nothing, so the signal fades. In one influential model, drugs like cocaine raise dopamine chemically, whatever you expected. The brain reads “better than predicted” every time, so the value of the drug, and of every cue pointing to it, keeps climbing. Slot machines and feeds run a milder version, because a reward you can’t predict is one you never finish learning about.</p>
+
+            <p><strong>Habits outlive their reasons.</strong> With repetition, control shifts from circuits that ask “is this worth it?” to circuits that simply run cue, then action. This is why you open the app without wanting to.</p>
+
+            <p><strong>Nothing stays good.</strong> When researchers tracked mood moment to moment during a gambling task, happiness followed not how much people had won but whether they had just done better than expected. The system normalises whatever you have and reports only the change. It was built to keep you moving, not to make you content.</p>
+
+            <p><strong>So learn to tell the pull from the pleasure.</strong> Pull lives in the anticipation and pleasure lives in the experience, and they leave different fingerprints. Pull is urgent, set off by a cue, and has no stopping point. Pleasure can wait, and it reaches “enough”. Pull peaks before you start and leaves you flat. Pleasure shows up in the middle and leaves you satisfied. The simplest test is delay: wait ten minutes or remove the cue. Pull usually evaporates, while a real preference is still there.</p>
+
+            <p><strong>Then put pleasure first.</strong> For a week or two, rate how much you want something before you do it, give it your full attention, stop at enough, and rate how good it was ten minutes after. Then compare the two numbers.</p>
+
+            <ul>
+                <li><strong>High want, low pleasure:</strong> add friction. Log out, move the app, or keep it out of the house.</li>
+                <li><strong>Low want, high pleasure:</strong> put it on the calendar, because nothing will remind you.</li>
+                <li><strong>High want, high pleasure:</strong> keep it, and space it out so it stays good.</li>
+            </ul>
+
+            <p>Pull is not the enemy. Wanting aimed at things you end up liking is what motivation is, so the goal is to line the two up, not to kill desire. Just remember that the itch is not evidence that scratching will feel good.</p>
+        </article>
+
+        <footer>
+            <a class="home" href="/">lohitkrishnan.com</a>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -15,9 +15,33 @@
             height: 100vh; /* Full screen height */
             margin: 0;
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            flex-direction: column; /* Stack the headline and the essay link */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
             font-family: "Courier New", Courier, monospace;
+        }
+
+        /* Link to the essay, below the typewriter line */
+        .reading {
+            margin: 2.5rem 1.25rem 0;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .reading a {
+            color: inherit;
+            text-decoration-color: orange;
+            text-underline-offset: 0.25em;
+        }
+
+        .reading a:hover {
+            color: #f0f6fc;
+        }
+
+        .reading a:focus-visible {
+            outline: 2px solid orange;
+            outline-offset: 4px;
         }
 
         /* 2. The Typewriter Container */
@@ -59,6 +83,10 @@
     <div class="typewriter">
         <h1>Page under construction.</h1>
     </div>
+
+    <p class="reading">
+        <a href="/essays/paid-in-surprise/">You’re paid in surprise, not pleasure</a>
+    </p>
 
 </body>
 </html>
