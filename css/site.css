@@ -16,6 +16,8 @@
     --rule: #e4dfd5;
     --line-strong: #b5aea2;
     --accent: orange;
+    --reading: rgba(255, 165, 0, 0.3);
+    --reading-hover: rgba(255, 165, 0, 0.12);
     --serif: "Lora", "Iowan Old Style", Charter, Georgia, "Noto Serif", serif;
 }
 
@@ -190,6 +192,26 @@ a:focus-visible {
 }
 
 .listen-status:empty { display: none; }
+
+/* Sentences are wrapped by /js/listen.js once listening starts. */
+.sentence {
+    border-radius: 0.2em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: background-color 0.15s;
+}
+
+.sentence.is-reading { background-color: var(--reading); }
+
+.essay.is-listening .sentence { cursor: pointer; }
+
+@media (hover: hover) {
+    .essay.is-listening .sentence:not(.is-reading):hover { background-color: var(--reading-hover); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sentence { transition: none; }
+}
 
 .essay p { margin: 0 0 1.35em; }
 
