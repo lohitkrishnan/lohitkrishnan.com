@@ -14,6 +14,7 @@
     --text: #24221f;
     --muted: #6f6a62;
     --rule: #e4dfd5;
+    --line-strong: #b5aea2;
     --accent: orange;
     --serif: "Lora", "Iowan Old Style", Charter, Georgia, "Noto Serif", serif;
 }
@@ -24,6 +25,7 @@
         --text: #e9e5dd;
         --muted: #9c978e;
         --rule: #36332f;
+        --line-strong: #6a665f;
     }
 }
 
@@ -143,6 +145,51 @@ a:focus-visible {
     display: block;
     margin-top: 1rem;
 }
+
+/* Listen button: reads the essay aloud (see /js/listen.js). */
+.listen {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 2.75rem;
+    margin-top: 1.4rem;
+    padding: 0.4rem 1rem 0.4rem 0.85rem;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.listen[hidden] { display: none; }
+
+.listen:hover { border-color: var(--muted); }
+
+.listen:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.listen-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    fill: var(--accent);
+}
+
+.listen-icon-pause { display: none; }
+.listen[data-state="playing"] .listen-icon-play { display: none; }
+.listen[data-state="playing"] .listen-icon-pause { display: block; }
+
+.listen-status {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.listen-status:empty { display: none; }
 
 .essay p { margin: 0 0 1.35em; }
 
