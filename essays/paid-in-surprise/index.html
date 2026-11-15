@@ -34,12 +34,19 @@
                 <h1 class="essay-title">You’re paid in surprise, not pleasure</h1>
                 <time class="date" datetime="2026-11-14">14 November 2026</time>
 
-                <!-- Shown by /js/listen.js only where the browser can read text aloud. -->
-                <button class="listen" type="button" hidden>
-                    <svg class="listen-icon listen-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
-                    <svg class="listen-icon listen-icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>
-                    <span class="listen-label">Listen</span>
-                </button>
+                <!-- Shown by /js/listen.js. The recording and its word timings live in /audio. -->
+                <div class="listen-bar">
+                    <button class="listen" type="button" hidden
+                            data-audio="/audio/paid-in-surprise.mp3"
+                            data-timings="/audio/paid-in-surprise.json"
+                            data-title="You’re paid in surprise, not pleasure (narration: elevenlabs.io)">
+                        <svg class="listen-icon listen-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+                        <svg class="listen-icon listen-icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>
+                        <span class="listen-label">Listen</span>
+                    </button>
+                    <span class="listen-time" hidden></span>
+                </div>
+                <div class="listen-credit" hidden>Narrated with an AI voice from <a href="https://elevenlabs.io">elevenlabs.io</a></div>
                 <div class="listen-status" role="status"></div>
             </header>
 

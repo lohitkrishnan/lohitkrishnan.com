@@ -17,6 +17,8 @@
     --line-strong: #b5aea2;
     --accent: orange;
     --reading: rgba(255, 165, 0, 0.3);
+    --reading-faint: rgba(255, 165, 0, 0.2);
+    --reading-word: rgba(255, 165, 0, 0.55);
     --reading-hover: rgba(255, 165, 0, 0.12);
     --serif: "Lora", "Iowan Old Style", Charter, Georgia, "Noto Serif", serif;
 }
@@ -28,6 +30,7 @@
         --muted: #9c978e;
         --rule: #36332f;
         --line-strong: #6a665f;
+        --reading-faint: rgba(255, 165, 0, 0.15);
     }
 }
 
@@ -185,32 +188,55 @@ a:focus-visible {
 .listen[data-state="playing"] .listen-icon-play { display: none; }
 .listen[data-state="playing"] .listen-icon-pause { display: block; }
 
-.listen-status {
-    margin-top: 0.6rem;
+.listen-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.listen-time {
+    margin-top: 1.4rem;
     font-size: 0.95rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.listen-credit {
+    margin-top: 0.7rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.listen-status {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
     color: var(--muted);
 }
 
 .listen-status:empty { display: none; }
 
-/* Sentences are wrapped by /js/listen.js once listening starts. */
-.sentence {
+/* Sentences and words are wrapped by /js/listen.js once listening starts.
+   data-listen on the essay says which mode is in use: "audio" (recorded
+   narration, word by word) or "speech" (device voice, sentence by sentence). */
+.sentence,
+.word {
     border-radius: 0.2em;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    transition: background-color 0.15s;
 }
 
 .sentence.is-reading { background-color: var(--reading); }
 
-.essay.is-listening .sentence { cursor: pointer; }
+/* With a recording, the sentence gets a faint tint and the word the strong one. */
+.essay[data-listen="audio"] .sentence.is-reading { background-color: var(--reading-faint); }
+.word.is-reading { background-color: var(--reading-word); }
+
+.essay[data-listen="speech"].is-listening .sentence,
+.essay[data-listen="audio"].is-listening .word { cursor: pointer; }
 
 @media (hover: hover) {
-    .essay.is-listening .sentence:not(.is-reading):hover { background-color: var(--reading-hover); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .sentence { transition: none; }
+    .essay[data-listen="speech"].is-listening .sentence:not(.is-reading):hover,
+    .essay[data-listen="audio"].is-listening .word:not(.is-reading):hover { background-color: var(--reading-hover); }
 }
 
 .essay p { margin: 0 0 1.35em; }
