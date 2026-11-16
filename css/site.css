@@ -321,7 +321,8 @@ a:focus-visible {
 }
 .songs h2 { margin: 0 0 0.4rem; }
 .songs > p { margin: 0 0 1.5rem; }
-.song-list { display: grid; gap: 1.75rem; }
+.song-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+.song-player img { max-width: 100%; }
 .song { margin: 0; }
 .song-player, .song-frame {
     display: block;
