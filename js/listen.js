@@ -49,10 +49,11 @@
     /* ---------- Splitting the essay into sentences and words ---------- */
 
     // Where each sentence starts and ends inside a block of text. Simple rule:
-    // a sentence ends at . ! or ? (plus any closing quote). Abbreviations with
-    // full stops would be split too early; none are used so far.
+    // a sentence ends at . ! or ? (plus any closing quote). A full stop with a
+    // digit straight after it is a decimal point ("5.2"), not an ending.
+    // Abbreviations with full stops would be split too early; none are used so far.
     function findSentences(text) {
-        var pattern = /[^.!?]+[.!?]+[”"’')]*|[^.!?]+$/g;
+        var pattern = /(?:[^.!?]|\.(?=\d))+[.!?]+[”"’')]*|(?:[^.!?]|\.(?=\d))+$/g;
         var ranges = [];
         var match;
         while ((match = pattern.exec(text)) !== null) {
@@ -165,7 +166,7 @@
 
     function prepare() {
         if (prepared) { return; }
-        var blocks = essay.querySelectorAll('.essay-title, p');
+        var blocks = essay.querySelectorAll('.essay-title, h2, p');
         Array.prototype.forEach.call(blocks, wrapBlock);
         prepared = true;
     }

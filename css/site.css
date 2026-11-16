@@ -15,6 +15,7 @@
     --muted: #6f6a62;
     --rule: #e4dfd5;
     --line-strong: #b5aea2;
+    --card: #f1ede4;
     --accent: orange;
     --reading: rgba(255, 165, 0, 0.3);
     --reading-faint: rgba(255, 165, 0, 0.2);
@@ -30,6 +31,7 @@
         --muted: #9c978e;
         --rule: #36332f;
         --line-strong: #6a665f;
+        --card: #292724;
         --reading-faint: rgba(255, 165, 0, 0.15);
     }
 }
@@ -242,6 +244,62 @@ a:focus-visible {
 .essay p { margin: 0 0 1.35em; }
 
 .essay strong { font-weight: 700; }
+
+.essay h2 {
+    margin: 2.4em 0 0.8em;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-wrap: balance;
+}
+
+/* Small closing note under an essay. */
+.essay .essay-note {
+    margin: 2.5rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* Drawings inside an essay. They are inline SVG coloured from the variables
+   above, so they follow light and dark mode like the text does. */
+.figure { margin: 2.2rem 0; }
+
+.figure svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: var(--serif);
+}
+
+.figure svg.figure-narrow {
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.figure figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--muted);
+    text-align: center;
+}
+
+.fig-card { fill: var(--card); }
+.fig-ink { fill: var(--text); }
+.fig-accent { fill: var(--accent); }
+.fig-shadow { fill: var(--line-strong); fill-opacity: 0.35; }
+.fig-title { fill: var(--text); font-size: 52px; font-weight: 600; letter-spacing: -0.01em; }
+.fig-sub { fill: var(--muted); font-size: 26px; }
+.fig-label { fill: var(--muted); font-size: 22px; text-anchor: middle; }
+.fig-label-strong { fill: var(--text); font-weight: 600; }
+.fig-ground { stroke: var(--line-strong); stroke-width: 1.5; }
+.fig-string { fill: none; stroke: var(--accent); stroke-width: 2; }
+.fig-bar { stroke: var(--accent); stroke-width: 10; stroke-linecap: round; }
+.fig-limb { fill: none; stroke: var(--text); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+.fig-line { fill: none; stroke: var(--text); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 
 .essay-footer {
     margin-top: 3.5rem;
